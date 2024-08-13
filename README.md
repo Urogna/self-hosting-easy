@@ -1,6 +1,6 @@
 # self-hosting-easy
 
-Quick and easy docker compose set up for self hosting with support for sso protected services
+Quick and easy docker compose setup for self hosting with support for sso protected services
 
 ## Setup
 
