@@ -16,7 +16,7 @@ You'll also need a domain you own 'example.com' and a DDNS service (I use DuckDN
 
 Install and setup docker with its compose plugin (refer to [Docker installation documentation](https://docs.docker.com/compose/install/linux/#install-using-the-repository))
 
-then run:
+then run inside the directory with the compose file:
 
 ```
 docker compose up -d
