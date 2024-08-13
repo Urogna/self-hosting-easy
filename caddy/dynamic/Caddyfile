@@ -1,0 +1,33 @@
+(with_sso) {
+  handle /*  {
+    reverse_proxy oauth2-proxy:4180 {
+      method GET
+      rewrite /oauth2/auth
+
+      @good status 202
+      handle_response @good
+
+      handle_response {
+        redir https://sso.example.com/oauth2/sign_in?rd=https://{host}
+      }
+    }
+  }
+}
+
+:80, :443 {  
+  header Content-Type text/html  
+  respond <<EOF  
+		<html>  
+			<head><title>ERROR</title></head>  
+			<body>  
+				<H2>ERROR</H2>  
+				<p>Sorry, we cannot find the desired site.</p> 
+			</body>  
+		</html>  
+	EOF 404  
+  tls internal {  
+    on_demand  
+  }  
+}
+
+# refer to https://caddyserver.com/docs/ for documentation and https://github.com/lucaslorentz/caddy-docker-proxy for docker labels support
