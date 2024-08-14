@@ -1,3 +1,7 @@
+{
+  email your.email@gmail.com
+}
+
 (with_sso) {
   handle /*  {
     reverse_proxy oauth2-proxy:4180 {
@@ -24,10 +28,7 @@
 				<p>Sorry, we cannot find the desired site.</p> 
 			</body>  
 		</html>  
-	EOF 404  
-  tls internal {  
-    on_demand  
-  }  
+	EOF 404
 }
 
 # refer to https://caddyserver.com/docs/ for documentation and https://github.com/lucaslorentz/caddy-docker-proxy for docker labels support
